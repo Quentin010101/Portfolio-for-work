@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --color-b: rgb(59, 59, 59);
+    --color-w: rgb(236, 236, 236);
+    --color-w-1: rgb(255, 255, 255);
+    --color-b-1: rgb(49, 49, 49);
+    --color-b-2: rgb(94, 94, 94);
+}
+/* html{
+    scroll-behavior: smooth;
+} */
+body{
+    overflow-x: hidden;
+}
+main{
+    position: relative;
+    z-index: 1;
+}
+a{
+    text-decoration: none;
+}
+#home{
+    position: relative;
+    height: 100vh;
+    padding: 20px;
+    transition: padding 0.7s ease-in;
+}
+#home > .figure-container{
+    position: relative;
+    height: 100%;
+}
+
+#home figure{
+    background-image: url('../asset/pexels-carlos-oliva-3586966.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--color-w);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.overlay{
+    position: absolute;
+    background-color: var(--color-p-2);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    transition: opacity 1.2s ease-in;
+}
+.title-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    color: var(--color-b);
+    transform: translateX(5vw); 
+    opacity: 0;
+    transition: all 0.8s ease-in;
+}
+h1 span{
+    color: var(--color-w);
+}
+
+.wrapper section{
+    padding: 50px;
+    min-height: 100vh;
+   
+}
+#loader{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 3;
+    background-color: var(--color-w);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loader > div:nth-child(1){
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: solid 3px transparent;
+    border-bottom-color: var(--color-b);
+    border-top-color: var(--color-b);
+    animation: rota 5s linear infinite;
+}
+#loader > div:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: solid 3px transparent;
+    border-bottom-color: var(--color-b);
+    border-left-color: var(--color-b);
+    animation: rota2 5s linear infinite;
+}
+@keyframes rota{
+    50%{ transform: rotate(180deg)}
+    100%{ transform: rotate(360deg)}
+}
+@keyframes rota2{
+    50%{ transform: translate(-50%, -50%) rotate(-180deg);}
+    100%{ transform: translate(-50%, -50%) rotate(-360deg)}
+}
+
+@media (max-width: 800px){
+    .title-container svg{
+        width: 340px;
+    }
+    h1{
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 500px){
+    .title-container svg{
+        width: 280px;
+    }
+    h1{
+        text-align: center;
+        max-width: 200px;
+        font-size: 1em;
+        margin: 0 auto;
+    }
+}
+
+
+
+

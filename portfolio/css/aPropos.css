@@ -1,0 +1,159 @@
+#aPropos{
+    min-height: 100vh;
+    padding: 100px 50px;
+    background-color: var(--color-w);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    overflow-x: hidden;
+}
+#skill{
+    display: flex;
+    margin-top: 15vh;
+    gap: 150px;
+}
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#text-container{
+    margin-bottom: 10vh;
+}
+#skill-container, #skill-2-container{
+    position: relative;
+    display: flex;
+}
+.skill-container-2{
+    padding: 20px;
+}
+#skill-container .svg-hard-skill, .svg2-hard-skill{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(20vw);
+}
+.svg-hard-skill  path, .svg2-hard-skill  path{
+    fill: var(--color-w);
+    stroke: var(--color-b);
+    transition: fill 0.5s ease-out;
+}
+.h2-container{
+    position: relative;
+}
+h2{
+    color: var(--color-p-1-2);
+}
+h3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--color-p-1);
+    opacity: 0.3;
+    font-size: 2.9em;
+}
+h4{
+    color: var(--color-b);
+}
+#aPropos p{
+    padding: 20px;
+    max-width: 600px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    line-height: 28px;
+}
+.engrenage, .mind-container{
+    position:relative;
+    height: 250px;
+    width: 60px;
+}
+.engrenage .eng{
+    position: absolute;
+    opacity: 0;
+}
+.engrenage .eng1{
+    top: 30%;
+    left: 0;
+    transform: scale(3);
+    animation: rot 13s linear infinite; 
+}
+.engrenage .eng2{
+    top: 51.5%;
+    left: -25%;
+    transform: scale(1.5);
+    animation: rot1 10s linear infinite; 
+}
+.mind-container{
+    position: relative;
+}
+.mind{
+    position: absolute;
+    top: -5%;
+    right: -40%
+}
+.mind svg{
+    transform: scale(0.5);
+}
+.mind svg path{
+    stroke-width: 8px;
+    stroke: var(--color-b);
+    fill: none;
+    stroke-dashoffset: 358px;
+    stroke-dasharray: 358px; 
+}
+@keyframes rot{
+    to{
+        transform: scale(3) rotate(359deg);
+    }
+}
+@keyframes rot1{
+    to{
+        transform: scale(1.5) rotate(-359deg);
+    }
+}
+.engrenage path{
+    stroke: var(--color-b);
+}
+
+@media (max-width: 1300px){
+    #aPropos{
+        flex-direction: column;
+    }
+    #text-container{
+        margin-bottom: 5vh;
+    }
+    #skill{
+        margin-top: 5vh;
+    }
+}
+@media (max-width: 850px){
+    #skill{
+        flex-direction: column;
+        gap: 50px
+    }
+    .h2-container{
+        width: fit-content;
+        margin: 0 auto;
+    }
+    h3{
+        width: 280%;
+    }
+    h2{
+        text-align: center;
+    }
+}
+@media (max-width: 650px){
+    #text-container{
+        margin-bottom: 2vh;
+    }
+    #skill{
+        margin-top: 2vh;
+    }
+    #aPropos{
+        padding: 100px 10px
+    }
+}
+

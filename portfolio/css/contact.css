@@ -1,0 +1,122 @@
+#contact{
+        min-height: 100vh;
+        padding: 100px 100px;
+        background-color: var(--color-w);
+}
+.contact-container{
+        padding: 70px 100px 0 100px;
+        display: flex;
+        justify-content: space-around;
+}
+
+.form-container-nom >div{
+        display: flex;
+        flex-direction: column;
+}
+.contact-input-height{
+        height: 35px;
+}
+.contact-input{
+        border: none;
+        background-color: var(--color-p-1);
+        outline: transparent solid 2px;
+        padding: 10px 10px;
+        margin: 0px 5px 20px 5px;
+        color: var(--color-b);
+        border-radius: 4px;
+}
+.contact-input:focus{
+        outline: var(--color-p-2) solid 2px;
+        transition: outline 0.2s ease;
+}
+textarea{
+        resize: none;
+        font-size: 0.8em;
+}
+form p {
+        font-size: 0.8em;
+        color: var(--color-b-2);
+}
+.link-container{
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+}
+
+.link-container svg path{
+        fill: var(--color-p-1-2)
+}
+.link-container a{
+        padding: 5px;
+}
+.link-container svg{
+        transform: scale(1);
+        transition: all 0.1s linear;
+}
+.link-container a:hover svg{
+        opacity: 0.8;
+        transform: scale(0.8)
+}
+.container-submit{
+        display: flex;
+        justify-content: center;
+}
+input[type='submit']{
+        border: 2px solid transparent;
+        padding: 5px 10px;
+        background-color: var(--color-p-1);
+        color: var(--color-b);
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: border 0.2s linear;
+}
+input[type='submit']:hover{
+        border: 2px solid var(--color-b);
+        padding: 5px 10px;
+        background-color: var(--color-p-1);
+        color: var(--color-b);
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+}
+#contact h4{
+        font-size: 1.2em;
+}
+@media (max-width: 1300px){
+        .contact-container{
+                padding: 70px 50px 0 50px;
+        } 
+}
+@media (max-width: 1300px){
+        .contact-container{
+                padding: 70px 0px 0 0px;
+        } 
+        .form-container{
+                max-width: 400px;
+        }
+}
+@media (max-width: 950px){
+        .link-container{
+                justify-content: center;
+        }
+        .contact-container{
+                padding: 70px 0px 0 0px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 60px;
+        } 
+        .form-container, textarea, input[type='email']{
+                max-width: 80vw;
+
+        }
+}
+@media (max-width: 650px){
+        #contact{
+                padding: 100px 0;
+        }
+        
+}
