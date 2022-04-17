@@ -16,7 +16,11 @@ function init() {
                             let time = 0.3 + (index / 1000)
 
                             element.style.opacity = 1
-                            element.style.transform += ' translateX(0vw)'
+                            if(element.dataset.sens === 'vertical'){
+                                element.style.transform += ' translateY(0px)'
+                            }else{
+                                element.style.transform += ' translateX(0vw)'
+                            }
                             element.style.transition = 'all ' + time + 's ease-out'
 
                             if (element.classList.contains('fill')) {

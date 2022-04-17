@@ -14,8 +14,8 @@
 /* html{
     scroll-behavior: smooth;
 } */
-body{
-    overflow-x: hidden;
+.wrapper-body-overflow{
+    overflow-x: hidden; 
 }
 main{
     position: relative;

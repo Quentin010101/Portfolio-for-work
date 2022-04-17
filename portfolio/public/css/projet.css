@@ -62,10 +62,10 @@
     max-width: 500px;
     border-radius: 10px;
     overflow: hidden;
-    transform: translate(-2vw);
+    transform: translate(-1vw);
 }
 .projet-card figure.left{
-    transform: translate(2vw);
+    transform: translate(1vw);
 }
 .projet-card figure::after{
     content: '';
@@ -164,13 +164,22 @@
     .projet-description, .projet-description.left{
         padding: 10px;
         height: 100px;
-        width: 320px;
+        width: 280px;
     }
     .projet-card-language{
         margin-top: 50px;
     }
     .projet-card figure{
-        max-height: 200px;
-        max-width: 320px;
+        max-height: 1900px;
+        max-width: 300px;
+    }
+    .projet-description{
+        left: 2%;
+    }
+    .projet-description.left{
+        left: 2%
+    }
+    #projet{
+        padding: 100px 100px 75px 100px;
     }
 }

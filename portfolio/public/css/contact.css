@@ -21,13 +21,25 @@
         background-color: var(--color-p-1);
         outline: transparent solid 2px;
         padding: 10px 10px;
-        margin: 0px 5px 20px 5px;
+        margin: 0px 5px 0px 5px;
         color: var(--color-b);
         border-radius: 4px;
 }
 .contact-input:focus{
         outline: var(--color-p-2) solid 2px;
         transition: outline 0.2s ease;
+}
+.form-section-translate{
+        transform: translateX(15px);
+        opacity: 0;
+}
+.form-section{
+        margin-bottom: 18px;
+}
+.form-error {
+        font-size: 0.8em;
+        font-style: italic;
+        color: red;
 }
 textarea{
         resize: none;
@@ -84,6 +96,22 @@ input[type='submit']:hover{
 }
 #contact h4{
         font-size: 1.2em;
+}
+.message-inactif{
+        opacity: 0;
+        z-index: -1;
+}
+.message-actif{
+        opacity: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        inset: 0;
+        z-index: 3;
+        background-color: rgba(0,0,0,0.5);
+        color: var(--color-w);
+        transition: 0.3s linear;
 }
 @media (max-width: 1300px){
         .contact-container{
