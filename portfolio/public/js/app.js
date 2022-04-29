@@ -1,11 +1,4 @@
-// color
-let random = Math.random() * 360
-document.documentElement.style.setProperty('--color-p-1', `hsl(${random}, 20%, 75%)`);
-document.documentElement.style.setProperty('--color-p-2', `hsl(${random}, 40%, 75%)`);
-document.documentElement.style.setProperty('--color-p-3', `hsl(${random}, 75%, 75%)`);
-document.documentElement.style.setProperty('--color-p-1-1', `hsl(${random}, 20%, 75%)`);
-document.documentElement.style.setProperty('--color-p-1-2', `hsl(${random}, 20%, 45%)`);
-document.documentElement.style.setProperty('--color-p-1-3', `hsl(${random}, 20%, 25%)`);
+
 
 
 function init() {
@@ -58,13 +51,12 @@ function init() {
 
                     timeLiHeader += 150
                 })
-                let docStyle = getComputedStyle(document.documentElement);
-                let color = docStyle.getPropertyValue('--color-b');
+
                 
                 dash.forEach(function (element) {
                     element.style.transition = 'stroke-dashoffset 1.5s ease-out'
                     setTimeout(function () {
-                        element.setAttribute("stroke", color)
+                        element.setAttribute("stroke", 'var(--color-b)')
                         element.style.strokeDashoffset = '0px'
                     }, timePathDash)
 
@@ -75,7 +67,7 @@ function init() {
                 dashColor.forEach(function (element) {
                     element.style.transition = 'fill-opacity 1.5s ease-out'
                     setTimeout(function () {
-                        element.setAttribute("fill", color)
+                        element.setAttribute("fill", 'var(--color-b)')
                         element.setAttribute("fill-opacity", "1")
                     }, timePathDash + 500)
                 })

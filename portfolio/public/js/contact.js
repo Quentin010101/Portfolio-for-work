@@ -8,7 +8,6 @@ function init(){
     const input_text = document.getElementById('text')
 
     const form = document.querySelector('form')
-    console.log('r')
 
     form.querySelector('input[type="submit"]').addEventListener('click', function(event){
 
@@ -44,18 +43,34 @@ function init(){
                 if (this.readyState == 4 && this.status == 200) {
     
                     let message_container = document.querySelector('#message-formulaire')
-                    console.log(this.responseText)
-                    let data = JSON.parse(this.responseText)
-                    if(data.success != ''){
+                    let test = true
+                    try{
+                        JSON.parse(this.responseText)
+                    }catch(e){
+                        console.error(e)
+                        test = false
+                    }
+                    if(test){
+                        let data = JSON.parse(this.responseText)
                         message_container.classList.add('message-actif')
                         setTimeout(()=>{
                             message_container.classList.remove('message-actif')                          
                         }, 3000)
-                        let text = data.success
-                        message_container.innerHTML = "<p>" + text + "</p>"
-                    }
-                    if(data.error != ''){
-                        message.innerHTML = data.error 
+                        if(data.success != ''){
+                            let text = data.success
+                            message_container.innerHTML = "<p>" + text + "</p>"
+                        }
+                        if(data.error != ''){
+                            let text = data.error
+                            message_container.innerHTML = "<p>" + text + "</p>"
+                        }
+                        clear()
+                    }else{
+                        message_container.classList.add('message-actif')
+                        setTimeout(()=>{
+                            message_container.classList.remove('message-actif')                          
+                        }, 3000)
+                        message_container.innerHTML = "<p>Une erreur est survenue<br>Votre message n'a pas pu été envoyé. </p>"
                     }
 
                 }
@@ -67,6 +82,13 @@ function init(){
 
 
     })
+
+    function clear(){
+        input_nom.value = ''
+        input_prenom.value = ''
+        input_email.value = ''
+        input_text.value = '' 
+    }
     
 }
  window.addEventListener('DOMContentLoaded', init)

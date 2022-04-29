@@ -32,6 +32,7 @@
 }
 .projet-card-language h5{
     opacity: 0;
+    color: var(--color-b);
 }
 .projet-card-language.left{
     right: auto;
@@ -45,12 +46,13 @@
     justify-content: space-between;
     top: 50%;
     left: 75%;
-    height: 150px;
+    min-height: 150px;
+    height: auto;
     width: 400px;
     background-color: var(--color-p-3);
     transform: translateY(-50%);
     padding: 20px;
-    box-shadow: 1px 1px 10px var(--color-b);
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
 }
 .projet-description.left{
     left: auto;
@@ -85,7 +87,7 @@
 }
 #projet p span{
     font-weight: 600;
-    color: var(--color-b-1);
+    color: var(--color-v-1);
 }
 .projet-description a{
     font-size: 0.8em;
@@ -123,14 +125,13 @@
         width: auto
     }
     .projet-card-content{
-        order: 2;
+        order: 3;
     }
     .projet-description, .projet-description.left{
         padding: 20px;
         top: auto;
         bottom: 0%;
         transform: translateY(50%);
-        height: 130px;
         width: 330px;
     }
     .projet-description{
@@ -140,19 +141,21 @@
         right: 5%
     }
     .projet-card-language{
-        margin-top: 65px;
         position: relative;
         display: flex;
         gap: 15px;
         color: var(--color-b-2);
-        order: 3;
+        order: 2;
+    }
+    .projet-card-language.left{
+        justify-content: flex-end;
     }
     .projet-card-title{
         order: 1;
     }
     .projet-container{
         padding: 100px 0px;
-        gap: 100px
+        gap: 170px
     }
     .projet-card figure{
         position: relative;
@@ -163,7 +166,6 @@
 @media (max-width: 500px){
     .projet-description, .projet-description.left{
         padding: 10px;
-        height: 100px;
         width: 280px;
     }
     .projet-card-language{

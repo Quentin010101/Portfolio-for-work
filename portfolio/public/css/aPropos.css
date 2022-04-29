@@ -23,6 +23,9 @@
 #text-container{
     margin-bottom: 10vh;
 }
+#text-container p{
+    color: var(--color-b);
+}
 #skill-container, #skill-2-container{
     position: relative;
     display: flex;
